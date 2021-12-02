@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+  --very-light-grayish-Blue: hsl(240, 78%, 98%);
+  --Light-Grayish-Blue: hsl(234, 14%, 74%);
+  --Grayish-Blue: hsl(233, 13%, 49%);
+  --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+  --Cold-Purple: hsl(236, 72%, 79%);
+  --Cold-Purple-dim: hsla(236, 72%, 79%, 0.2);
+  --Blue-Lotus: hsl(237, 63%, 64%);
+
+  --clr-background: var(--Cold-Purple-dim);
+  --clr-accent-background: linear-gradient(135deg, var(--Cold-Purple), var(--Blue-Lotus));
+  --clr-text-positive: var(--Dark-Grayish-Blue);
+  --clr-text-negative: var(--very-light-grayish-Blue);
+  --clr-text-accent: var(--Blue-Lotus);
+  --clr-text-tittle: var(--Grayish-Blue);
+  --clr-text-toggle-option: var(--Light-Grayish-Blue);
+  --clr-border: var(--Light-Grayish-Blue);
+  --clr-shadow: hsla(232, 13%, 33%, 0.3);
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  background: var(--clr-background);
+}
+main {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main h1 {
+  margin-top: 64px;
+  margin-bottom: 32px;
+  color: var(--clr-text-tittle);
+}
+.packages-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.packages {
+  width: 100%;
+  max-width: 300px;
+  min-width: 250px;
+  min-height: 300px;
+  aspect-ratio: 1/1.64;
+  margin: 16px 8px;
+  padding: 12px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--very-light-grayish-Blue);
+  border-radius: 12px;
+  color: var(--clr-text-positive);
+  box-shadow: 1px 3px 15px var(--clr-shadow);
+}
+.packages.professional {
+  color: var(--clr-text-negative);
+  background: var(--clr-accent-background);
+}
+
+.packages .tittles {
+  margin-bottom: 20px;
+}
+.packages .prices {
+  margin-bottom: 20px;
+  font-size: 48px;
+}
+.packages .prices .monthly {
+  display: none;
+}
+.packages .benefits {
+  width: 100%;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.packages .benefits p {
+  width: 100%;
+  margin: 0;
+  padding: 12px 4px;
+  border-top: 1.2px solid var(--clr-border);
+}
+.packages .benefits p:last-child {
+  border-bottom: 1.2px solid var(--clr-border);
+}
+.packages a {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 6px;
+  background: var(--clr-accent-background);
+  color: var(--clr-text-negative);
+}
+
+.packages.professional a {
+  background: var(--very-light-grayish-Blue);
+  color: var(--clr-text-accent);
+}
+
+
+#toggle:checked ~ .packages-container .packages .prices .monthly {
+  display: block;
+}
+#toggle:checked ~ .packages-container .packages .prices .annually {
+  display: none;
+}
+#toggle {
+  display: none;
+  visibility: hidden;
+}
+.toggle-bar {
+  min-width: 200px;
+  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 12px;
+  color: var(--clr-text-toggle-option);
+}
+.toggle-bar_switch {
+  width: 36px;
+  height: 20px;
+  padding: 0 1px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 20px;
+  background: var(--clr-accent-background);
+}
+.toggle-bar_ball {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: var(--very-light-grayish-Blue);
+  border-radius: 50%;
+}
+#toggle:checked ~ .toggle-bar .toggle-bar_switch {
+  justify-content: flex-end;
+}
+
+footer {
+  height: 50px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
